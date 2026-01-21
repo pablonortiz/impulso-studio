@@ -84,7 +84,7 @@ export function VideoModal({ project, isOpen, onClose }: VideoModalProps) {
             </button>
 
             {/* Video Container */}
-            <div className="relative bg-black rounded-t-2xl overflow-hidden">
+            <div className="relative bg-black rounded-t-2xl">
               {project.videoUrl ? (
                 <video
                   ref={videoRef}
@@ -92,13 +92,15 @@ export function VideoModal({ project, isOpen, onClose }: VideoModalProps) {
                   controls
                   autoPlay
                   playsInline
-                  className="w-full aspect-video object-contain"
+                  controlsList="nodownload"
+                  className="w-full rounded-t-2xl"
+                  style={{ maxHeight: '60vh', display: 'block' }}
                   poster={project.thumbnailUrl}
                 >
                   Tu navegador no soporta el elemento de video.
                 </video>
               ) : (
-                <div className="w-full aspect-video flex items-center justify-center bg-[var(--color-dark-gray)]">
+                <div className="w-full aspect-video flex items-center justify-center bg-[var(--color-dark-gray)] rounded-t-2xl">
                   <div className="text-center">
                     <svg
                       className="w-16 h-16 mx-auto mb-4 text-[var(--color-yellow)]"

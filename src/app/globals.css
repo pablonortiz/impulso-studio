@@ -177,3 +177,16 @@ body {
   background: var(--color-yellow);
   color: var(--color-black);
 }
+
+/* Video controls visibility */
+video::-webkit-media-controls {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+video::-webkit-media-controls-panel {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
