@@ -50,7 +50,7 @@ export const projects: Project[] = [
     ],
     category: "app",
     videoUrl: "/videos/perfumario.mp4",
-    thumbnailUrl: "/thumbnails/perfumario.jpg",
+    thumbnailUrl: "/thumbnails/perfumario.png",
   },
   {
     id: "catalogador-extractos",
