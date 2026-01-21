@@ -49,9 +49,20 @@ export function ProjectsPreview() {
                   className="card p-6 cursor-pointer group"
                   onClick={() => handleProjectClick(project)}
                 >
-                  {/* Play Button Overlay */}
+                  {/* Thumbnail with Gradient Overlay */}
                   <div className="relative mb-6 aspect-video bg-[var(--background)] rounded-lg overflow-hidden flex items-center justify-center border border-[var(--card-border)]">
-                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-yellow)]/5 to-transparent" />
+                    {/* Thumbnail Background */}
+                    {project.thumbnailUrl && (
+                      <div
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        style={{ backgroundImage: `url(${project.thumbnailUrl})` }}
+                      />
+                    )}
+
+                    {/* Gradient Overlay - transparent top to dark bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+
+                    {/* Play button */}
                     <div className="relative z-10 w-16 h-16 rounded-full bg-[var(--color-yellow)] flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
                       <svg
                         className="w-7 h-7 text-[var(--color-black)] ml-1"
@@ -61,7 +72,7 @@ export function ProjectsPreview() {
                         <polygon points="5 3 19 12 5 21 5 3" />
                       </svg>
                     </div>
-                    <span className="absolute bottom-3 right-3 text-xs text-[var(--muted)] opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span className="absolute bottom-3 right-3 text-xs text-white/80 opacity-0 group-hover:opacity-100 transition-opacity drop-shadow">
                       Ver demo
                     </span>
                   </div>

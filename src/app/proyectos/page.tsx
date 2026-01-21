@@ -50,11 +50,20 @@ export default function ProyectosPage() {
                     onClick={() => handleOpenVideo(project)}
                     className="w-full aspect-video relative bg-[var(--background)] flex items-center justify-center cursor-pointer overflow-hidden"
                   >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[var(--color-yellow)]/10 via-transparent to-[var(--color-yellow)]/5" />
+                    {/* Thumbnail Background */}
+                    {project.thumbnailUrl && (
+                      <div
+                        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                        style={{ backgroundImage: `url(${project.thumbnailUrl})` }}
+                      />
+                    )}
 
-                    {/* Decorative elements */}
-                    <div className="absolute top-4 left-4 flex items-center gap-2">
-                      <span className="text-xs text-[var(--color-yellow)] uppercase tracking-wider font-medium px-2 py-1 bg-[var(--color-yellow)]/10 rounded">
+                    {/* Gradient Overlay - transparent top to dark bottom */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/80" />
+
+                    {/* Category Badge */}
+                    <div className="absolute top-4 left-4 flex items-center gap-2 z-10">
+                      <span className="text-xs text-[var(--color-yellow)] uppercase tracking-wider font-medium px-2 py-1 bg-black/50 backdrop-blur-sm rounded">
                         {project.category === "app" && "Aplicación"}
                         {project.category === "web" && "Web"}
                         {project.category === "system" && "Sistema"}
@@ -72,7 +81,7 @@ export default function ProyectosPage() {
                           <polygon points="5 3 19 12 5 21 5 3" />
                         </svg>
                       </div>
-                      <span className="text-sm text-[var(--muted)] group-hover:text-[var(--foreground)] transition-colors">
+                      <span className="text-sm text-white/90 group-hover:text-white transition-colors drop-shadow-lg">
                         Ver demostración
                       </span>
                     </div>
