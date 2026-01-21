@@ -1,36 +1,120 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Impulso Studio Website
 
-## Getting Started
+Website corporativo de Impulso Studio - Software a medida para negocios.
 
-First, run the development server:
+## Stack Tecnológico
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- **Framework:** Next.js 15 (App Router)
+- **Lenguaje:** TypeScript
+- **Estilos:** Tailwind CSS v4
+- **Animaciones:** Framer Motion
+- **Hosting:** Vercel
+
+## Estructura del Proyecto
+
+```
+src/
+├── app/                    # Páginas y rutas
+│   ├── page.tsx           # Home
+│   ├── proyectos/         # Página de proyectos
+│   ├── contacto/          # Página de contacto
+│   ├── privacidad/        # Política de privacidad
+│   ├── sitemap.ts         # Sitemap dinámico
+│   └── robots.ts          # Robots.txt dinámico
+├── components/
+│   ├── layout/            # Header, Footer, ThemeProvider
+│   └── sections/          # Componentes de secciones
+├── data/                  # Datos mock (proyectos, servicios, etc.)
+└── lib/                   # Utilidades (WhatsApp, animaciones)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Configuración
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 1. WhatsApp
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Editar el número de WhatsApp en `src/lib/whatsapp.ts`:
 
-## Learn More
+```typescript
+const WHATSAPP_NUMBER = "5491112345678"; // Reemplazar con el número real
+```
 
-To learn more about Next.js, take a look at the following resources:
+### 2. Dominio
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Actualizar el dominio en:
+- `src/app/layout.tsx` (metadataBase)
+- `src/app/sitemap.ts`
+- `src/app/robots.ts`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### 3. OG Image
 
-## Deploy on Vercel
+Agregar imagen para Open Graph en `public/og-image.png` (1200x630px recomendado).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Desarrollo Local
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+# Instalar dependencias
+npm install
+
+# Iniciar servidor de desarrollo
+npm run dev
+
+# Abrir http://localhost:3000
+```
+
+## Build
+
+```bash
+# Crear build de producción
+npm run build
+
+# Iniciar servidor de producción
+npm start
+```
+
+## Deploy en Vercel
+
+### Opción 1: Desde GitHub
+
+1. Subir el proyecto a un repositorio de GitHub
+2. Ir a [vercel.com/new](https://vercel.com/new)
+3. Importar el repositorio
+4. Vercel detectará automáticamente Next.js y aplicará la configuración correcta
+5. Click en "Deploy"
+
+### Opción 2: Desde CLI
+
+```bash
+# Instalar Vercel CLI
+npm i -g vercel
+
+# Deploy
+vercel
+
+# Deploy a producción
+vercel --prod
+```
+
+### Variables de Entorno (Opcional)
+
+Si necesitás variables de entorno, configurarlas en el dashboard de Vercel:
+- Settings → Environment Variables
+
+## Características
+
+- Diseño premium minimal
+- Tema claro/oscuro con persistencia
+- SEO completo (metadata, OG, sitemap, robots)
+- Animaciones sutiles con Framer Motion
+- Responsive design
+- CTA de WhatsApp integrado
+
+## Paleta de Colores
+
+- Negro: `#0B0B0D`
+- Gris Oscuro: `#1A1A1E`
+- Amarillo (acento): `#FFC400`
+- Blanco Off: `#F5F5F5`
+
+## Licencia
+
+Propiedad de Impulso Studio. Todos los derechos reservados.
