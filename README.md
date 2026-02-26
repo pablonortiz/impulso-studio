@@ -1,120 +1,81 @@
-# Impulso Studio Website
+# Impulso Studio
 
-Website corporativo de Impulso Studio - Software a medida para negocios.
+![Next.js](https://img.shields.io/badge/Next.js_16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS_v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=for-the-badge&logo=framer&logoColor=white)
 
-## Stack Tecnológico
+Corporate website for Impulso Studio — custom software for businesses.
 
-- **Framework:** Next.js 15 (App Router)
-- **Lenguaje:** TypeScript
-- **Estilos:** Tailwind CSS v4
-- **Animaciones:** Framer Motion
-- **Hosting:** Vercel
+## Features
 
-## Estructura del Proyecto
+- Premium minimal design
+- Light/dark theme with persistence
+- Full SEO (metadata, Open Graph, sitemap, robots)
+- Subtle animations with Framer Motion
+- Fully responsive
+- Integrated WhatsApp CTA
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **Next.js 16** | Framework (App Router) |
+| **TypeScript** | Language |
+| **Tailwind CSS v4** | Styling |
+| **Framer Motion** | Animations |
+| **Vercel** | Hosting |
+
+## Project Structure
 
 ```
 src/
-├── app/                    # Páginas y rutas
+├── app/                    # Pages and routes
 │   ├── page.tsx           # Home
-│   ├── proyectos/         # Página de proyectos
-│   ├── contacto/          # Página de contacto
-│   ├── privacidad/        # Política de privacidad
-│   ├── sitemap.ts         # Sitemap dinámico
-│   └── robots.ts          # Robots.txt dinámico
+│   ├── proyectos/         # Projects page
+│   ├── contacto/          # Contact page
+│   ├── privacidad/        # Privacy policy
+│   ├── sitemap.ts         # Dynamic sitemap
+│   └── robots.ts          # Dynamic robots.txt
 ├── components/
 │   ├── layout/            # Header, Footer, ThemeProvider
-│   └── sections/          # Componentes de secciones
-├── data/                  # Datos mock (proyectos, servicios, etc.)
-└── lib/                   # Utilidades (WhatsApp, animaciones)
+│   ├── sections/          # Section components
+│   └── ui/                # UI components
+├── data/                  # Mock data (projects, services, etc.)
+└── lib/                   # Utilities (WhatsApp, animations)
 ```
 
-## Configuración
-
-### 1. WhatsApp
-
-Editar el número de WhatsApp en `src/lib/whatsapp.ts`:
-
-```typescript
-const WHATSAPP_NUMBER = "5491112345678"; // Reemplazar con el número real
-```
-
-### 2. Dominio
-
-Actualizar el dominio en:
-- `src/app/layout.tsx` (metadataBase)
-- `src/app/sitemap.ts`
-- `src/app/robots.ts`
-
-### 3. OG Image
-
-Agregar imagen para Open Graph en `public/og-image.png` (1200x630px recomendado).
-
-## Desarrollo Local
+## Getting Started
 
 ```bash
-# Instalar dependencias
+# Install dependencies
 npm install
 
-# Iniciar servidor de desarrollo
+# Start development server
 npm run dev
 
-# Abrir http://localhost:3000
+# Open http://localhost:3000
 ```
 
 ## Build
 
 ```bash
-# Crear build de producción
+# Create production build
 npm run build
 
-# Iniciar servidor de producción
+# Start production server
 npm start
 ```
 
-## Deploy en Vercel
+## Color Palette
 
-### Opción 1: Desde GitHub
+| Color | Hex |
+|---|---|
+| Black | `#0B0B0D` |
+| Dark Gray | `#1A1A1E` |
+| Accent (Yellow) | `#FFC400` |
+| Off White | `#F5F5F5` |
 
-1. Subir el proyecto a un repositorio de GitHub
-2. Ir a [vercel.com/new](https://vercel.com/new)
-3. Importar el repositorio
-4. Vercel detectará automáticamente Next.js y aplicará la configuración correcta
-5. Click en "Deploy"
+## License
 
-### Opción 2: Desde CLI
-
-```bash
-# Instalar Vercel CLI
-npm i -g vercel
-
-# Deploy
-vercel
-
-# Deploy a producción
-vercel --prod
-```
-
-### Variables de Entorno (Opcional)
-
-Si necesitás variables de entorno, configurarlas en el dashboard de Vercel:
-- Settings → Environment Variables
-
-## Características
-
-- Diseño premium minimal
-- Tema claro/oscuro con persistencia
-- SEO completo (metadata, OG, sitemap, robots)
-- Animaciones sutiles con Framer Motion
-- Responsive design
-- CTA de WhatsApp integrado
-
-## Paleta de Colores
-
-- Negro: `#0B0B0D`
-- Gris Oscuro: `#1A1A1E`
-- Amarillo (acento): `#FFC400`
-- Blanco Off: `#F5F5F5`
-
-## Licencia
-
-Propiedad de Impulso Studio. Todos los derechos reservados.
+MIT
